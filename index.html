@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/avy6vjs.css"> <!-- Adobe Fonts for Minion Pro Display and Hummingbird -->
+    <script src="script.js" defer></script> <!-- Ensure the script loads after the DOM -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Your Logo">
+            </a>
+            <div id="nav-center-text" class="nav-center-text"></div> <!-- Centered Text -->
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+        </div>
+    </nav>
+
+    <!-- Full-Width Background Section -->
+    <div class="full-width-background">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <img src="images/1.jpg" alt="Image 1">
+                    <img src="images/2.jpg" alt="Image 2">
+                    <img src="images/3.jpg" alt="Image 3">
+                    <img src="images/4.jpg" alt="Image 4">
+                    <img src="images/5.jpg" alt="Image 5">
+                    <img src="images/6.jpg" alt="Image 6">
+                    <img src="images/7.jpg" alt="Image 7">
+                    <img src="images/8.jpg" alt="Image 8">
+                    <img src="images/9.jpg" alt="Image 9">
+                    <img src="images/10.jpg" alt="Image 10">
+                </div>
+            </div>
+            <!-- Navigation Dots -->
+            <div class="nav-dots">
+                <div class="dot" onclick="currentSlide(1)">1</div>
+                <div class="dot" onclick="currentSlide(2)">2</div>
+                <div class="dot" onclick="currentSlide(3)">3</div>
+                <div class="dot" onclick="currentSlide(4)">4</div>
+                <div class="dot" onclick="currentSlide(5)">5</div>
+                <div class="dot" onclick="currentSlide(6)">6</div>
+                <div class="dot" onclick="currentSlide(7)">7</div>
+                <div class="dot" onclick="currentSlide(8)">8</div>
+                <div class="dot" onclick="currentSlide(9)">9</div>
+                <div class="dot" onclick="currentSlide(10)">10</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <img src="images/ph female.jpg" alt="Artist Image" class="artist-image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum, erat nec luctus fermentum, magna purus sollicitudin erat, eget aliquet libero erat at nisl. Fusce at nisi at urna auctor vehicula. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis. Phasellus vitae lorem at mi condimentum placerat. Vivamus non dui vel eros hendrerit gravida. Suspendisse potenti. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis. Nullam venenatis, quam non faucibus pretium, velit nisi dignissim urna, sit amet viverra augue metus ac nisi. Sed fermentum, erat nec luctus fermentum, magna purus sollicitudin erat, eget aliquet libero erat at nisl. Fusce at nisi at urna auctor vehicula. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further information, feel free to reach out to us using the form below or via the contact details provided.</p>
+            
+            <div class="contact-info">
+                <p><strong>	</strong> Serving the Greater Charleston Area</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> contact@yourcompany.com</p>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required autocomplete="off"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-center-text">Contemplative Photography Imagery</p> <!-- Hidden by default, visible on smaller screens -->
+            <p class="footer-text">© 2024 CASS EAGER STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
