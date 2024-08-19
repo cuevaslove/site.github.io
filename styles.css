@@ -1,0 +1,519 @@
+/* Reset some basic styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'minion-pro', serif; /* Apply Minion Pro font */
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #f0f0f0; /* Light grey color */
+    color: #333;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 2000; /* Higher z-index to ensure it stays on top */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Navbar Container */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add padding to container */
+    position: relative;
+}
+
+/* Logo Styling */
+.logo img {
+    max-height: 40px; /* Adjust the height to make the logo smaller */
+    width: auto;  /* Maintain aspect ratio */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px; /* Space between the logo and menu */
+    margin-left: 20px;  /* Add space on the left to move it away from the edge */
+}
+
+/* Navbar Center Text */
+.nav-center-text {
+    font-family: 'hummingbird', serif; /* Apply Hummingbird font */
+    font-size: 45px; /* Adjust the font size as needed */
+    color: #333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Prevent the text from wrapping */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'minion-pro', serif; /* Apply Minion Pro to nav links */
+    font-size: 20px; /* Increase font size */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu.active {
+    display: block; /* Show the menu when active */
+}
+
+/* Footer Text */
+.footer-text {
+    margin: 0;
+}
+
+.footer-center-text {
+    display: none; /* Hidden by default */
+    font-family: 'hummingbird', serif; /* Apply Hummingbird font */
+    font-size: 30px; /* Adjust font size as needed */
+    margin-top: 10px;
+}
+
+/* Responsive Changes */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide regular menu */
+        flex-direction: column;
+        width: 100%;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex; /* Display the menu as flexbox when active */
+    }
+
+    .nav-menu li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 22px; /* Slightly larger font size on mobile */
+        padding: 10px 0;
+    }
+
+    .nav-center-text {
+        display: none; /* Hide the center text in the navbar */
+    }
+
+    .logo {
+        margin-left: auto; /* Remove left margin */
+        margin-right: auto; /* Center the logo */
+        text-align: center;
+    }
+
+    .footer-center-text {
+        display: block; /* Show the footer text on smaller screens */
+    }
+}
+
+/* Full-Width Background */
+.full-width-background {
+    width: 100%;
+    background: url('images/background.png') no-repeat center center; /* Full-width background image */
+    background-size: cover; /* Ensure the background covers the whole width */
+    padding: 20px 0; /* Add vertical padding to create space around the slider */
+    box-sizing: border-box;
+}
+
+/* Slider Container */
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background: url('images/background.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0; /* Start hidden */
+    transform: scale(0.5); /* Start scaled down */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}		
+
+.slider-container.visible {
+    opacity: 1; /* Fade in */
+    transform: scale(1); /* Grow to full size */
+}
+
+/* Slider */
+.slider {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the slider within its container */
+}
+
+/* Slides Container */
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+/* Images in Slider */
+.slides img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Add shadowing directly to the image */
+    border-radius: 10px; /* Add rounded corners directly to the image */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+/* Show the active image */
+.slides img.active {
+    opacity: 1; /* Show the active image */
+    z-index: 1; /* Ensure the active image is on top */
+}
+
+/* Dots Slide-In */
+.nav-dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 18px;
+    padding: 0;
+    z-index: 100;
+}
+
+.dot {
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+    background: url('images/dot bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    opacity: 0; /* Start hidden */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0); /* Start with no glow */
+}
+
+.dot.visible {
+    opacity: 1;
+    transform: translateX(0); /* Slide into place */
+}
+
+.dot.active {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+.dot:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+.dot:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.dot:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.dot:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+.dot:nth-child(5) {
+    transition-delay: 0.9s;
+}
+
+.dot:nth-child(6) {
+    transition-delay: 1.1s;
+}
+
+.dot:nth-child(7) {
+    transition-delay: 1.3s;
+}
+
+.dot:nth-child(8) {
+    transition-delay: 1.5s;
+}
+
+.dot:nth-child(9) {
+    transition-delay: 1.7s;
+}
+
+.dot:nth-child(10) {
+    transition-delay: 1.9s;
+}
+
+@keyframes slideInDots {
+    to {
+        transform: translateX(0); /* Slide into place */
+        opacity: 1; /* Become visible */
+    }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .slider-container {
+        flex-direction: column; /* Stack slider and dots vertically */
+        align-items: center;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .nav-dots {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 2 rows of 5 dots */
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 0;
+        width: 80%; /* Ensure the dots don't exceed the width of the slider */
+        left: 0;
+        transform: none;
+        position: relative;
+        top: auto; /* Reset positioning */
+    }
+
+    .slider {
+        width: 100%; /* Ensure slider takes full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px; /* Adjust padding for very small screens */
+    }
+
+    .slides {
+        padding-bottom: 75%; /* Adjusted aspect ratio for smaller screens */
+    }
+
+    .slider {
+        width: 90%; /* Slightly increase width on very small screens */
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 20px 20px;
+    background-color: #cccccc; /* Slightly darker grey background */
+    text-align: left; /* Align text to the left */
+    opacity: 0; /* Initially hidden for transition effect */
+    transform: translateY(20px); /* Slightly offset to enhance the fade-in effect */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for fade and movement */
+    font-family: 'minion-pro', serif; /* Apply Minion Pro to the About section */
+}
+
+.about-section.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to original position */
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center; /* Center the "About Us" heading */
+}
+
+.about-section img.artist-image {
+    max-width: 150px; /* Make the image smaller */
+    height: auto;
+    border-radius: 10px; /* Adds rounded corners */
+    margin: 0 20px 20px 0; /* Adds space around the image, especially on the right */
+    float: left; /* Float the image to the left of the text */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify; /* Justify the text to align both left and right edges */
+}
+
+/* Media Query to Make About Section Visible on Small Screens */
+@media (max-width: 768px) {
+    .about-section {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Position it correctly */
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #e0e0e0; /* Light grey background */
+    text-align: center;
+    opacity: 0; /* Initially hidden for transition effect */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for slide and fade */
+    font-family: 'minion-pro', serif; /* Apply Minion Pro to the Contact section */
+}
+
+.contact-section.visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+    transform: translateX(0); /* Slide in from the left */
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    font-size: 1.2rem; /* Increase the font size slightly */
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center; /* Center the text */
+}
+
+.contact-form {
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #fff; /* Optional: Add a background color to the form */
+    border-radius: 10px; /* Optional: Add rounded corners to the form */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Make the input and textarea fields take up the full width of the form */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    display: block;
+    width: 100%; /* Make the submit button take up the full width of the form */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'minion-pro', serif; /* Apply Minion Pro to the footer */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column; /* Allow for stacked elements */
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
