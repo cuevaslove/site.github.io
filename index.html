@@ -3,108 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>Center Image with SVG Button</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.typekit.net/avy6vjs.css"> <!-- Adobe Fonts for Minion Pro Display and Hummingbird -->
-    <script src="script.js" defer></script> <!-- Ensure the script loads after the DOM -->
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="Your Logo">
-            </a>
-            <div id="nav-center-text" class="nav-center-text"></div> <!-- Centered Text -->
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
-        </div>
-    </nav>
-
-    <!-- Full-Width Background Section -->
-    <div class="full-width-background">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slides">
-                    <img src="images/1.jpg" alt="Image 1">
-                    <img src="images/2.jpg" alt="Image 2">
-                    <img src="images/3.jpg" alt="Image 3">
-                    <img src="images/4.JPG" alt="Image 4">
-                    <img src="images/5.jpg" alt="Image 5">
-                    <img src="images/6.jpg" alt="Image 6">
-                    <img src="images/7.jpg" alt="Image 7">
-                    <img src="images/8.jpg" alt="Image 8">
-                    <img src="images/9.jpg" alt="Image 9">
-                    <img src="images/10.jpg" alt="Image 10">
-                </div>
-            </div>
-            <!-- Navigation Dots -->
-            <div class="nav-dots">
-                <div class="dot" onclick="currentSlide(1)">1</div>
-                <div class="dot" onclick="currentSlide(2)">2</div>
-                <div class="dot" onclick="currentSlide(3)">3</div>
-                <div class="dot" onclick="currentSlide(4)">4</div>
-                <div class="dot" onclick="currentSlide(5)">5</div>
-                <div class="dot" onclick="currentSlide(6)">6</div>
-                <div class="dot" onclick="currentSlide(7)">7</div>
-                <div class="dot" onclick="currentSlide(8)">8</div>
-                <div class="dot" onclick="currentSlide(9)">9</div>
-                <div class="dot" onclick="currentSlide(10)">10</div>
-            </div>
-        </div>
+    <div class="image-container">
+        <img src="center image.png" alt="Center Image" class="center-image">
+		<img src="light.png" alt="Light Effect" class="light-effect">
+		<img src="shadow.png" alt="Shadow Effect" class="shadow-effect">
+		<img src="cass.png" alt="Cass" class="cass-effect">
+        <a class="btn-gold" href="#">
+            <span class="btn-text">ENTER SITE</span>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="337px" height="68px" viewBox="0 0 337 68" style="enable-background:new 0 0 337 68;" xml:space="preserve">
+                <style type="text/css">
+                    .st0{fill:url(#svgid_1_);}
+                    .st1{fill:url(#svgid_2_);}
+                    .st2{fill:url(#svgid_3_);}
+                </style>
+                <g>
+                    <lineargradient id="svgid_1_" gradientUnits="userSpaceOnUse" x1="14.1012" y1="34" x2="322.8987" y2="34">
+                        <stop  offset="0" style="stop-color:#E2D8AB"/>
+                        <stop  offset="1" style="stop-color:#9E805D"/>
+                    </lineargradient>
+                    <polygon class="st0" points="310,12 27,12 14.1,24.9 14.1,43.1 27,56 310,56 322.9,43.1 322.9,24.9 	"/>
+                </g>
+                <g>
+                    <lineargradient id="svgid_2_" gradientUnits="userSpaceOnUse" x1="168.5" y1="4.6422" x2="168.5" y2="63.3578">
+                        <stop  offset="0" style="stop-color:#E2D8AB"/>
+                        <stop  offset="1" style="stop-color:#9E805D"/>
+                    </lineargradient>
+                    <path class="st1" d="M311.9,8.1L327,23.3v21.4l-15.1,15.1H25.1L10,44.7V23.3L25.1,8.1H311.9 M313.3,4.6H23.7L6.5,21.8v24.3
+                        l17.2,17.2h289.6l17.2-17.2V21.8L313.3,4.6L313.3,4.6z"/>
+                </g>
+                <g>
+                    <lineargradient id="svgid_3_" gradientUnits="userSpaceOnUse" x1="168.5" y1="12" x2="168.5" y2="56">
+                        <stop  offset="0" style="stop-color:#E2D8AB"/>
+                        <stop  offset="1" style="stop-color:#9E805D"/>
+                    </lineargradient>
+                    <path class="st2" d="M309.5,13.2l12.2,12.2v17.2l-12.2,12.2h-282L15.3,42.6V25.4l12.2-12.2H309.5 M310,12H27L14.1,24.9v18.2L27,56
+                        h283l12.9-12.9V24.9L310,12L310,12z"/>
+                </g>
+            </svg>
+        </a>
     </div>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Us</h2>
-            <img src="images/ph female.jpg" alt="Artist Image" class="artist-image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum, erat nec luctus fermentum, magna purus sollicitudin erat, eget aliquet libero erat at nisl. Fusce at nisi at urna auctor vehicula. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis. Phasellus vitae lorem at mi condimentum placerat. Vivamus non dui vel eros hendrerit gravida. Suspendisse potenti. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis. Nullam venenatis, quam non faucibus pretium, velit nisi dignissim urna, sit amet viverra augue metus ac nisi. Sed fermentum, erat nec luctus fermentum, magna purus sollicitudin erat, eget aliquet libero erat at nisl. Fusce at nisi at urna auctor vehicula. Donec luctus, quam non euismod elementum, erat mauris faucibus lectus, vitae consectetur massa urna et orci. Integer nec scelerisque felis.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need further information, feel free to reach out to us using the form below or via the contact details provided.</p>
-            
-            <div class="contact-info">
-                <p><strong>	</strong> Serving the Greater Charleston Area</p>
-                <p><strong>Phone:</strong> (123) 456-7890</p>
-                <p><strong>Email:</strong> contact@yourcompany.com</p>
-            </div>
-            
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required autocomplete="name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required autocomplete="off"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-center-text">Contemplative Photography Imagery</p> <!-- Hidden by default, visible on smaller screens -->
-            <p class="footer-text">© 2024 CASS EAGER STUDIO. All rights reserved.</p>
-        </div>
-    </footer>
-
 </body>
 </html>
