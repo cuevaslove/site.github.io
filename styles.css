@@ -173,6 +173,18 @@ body {
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
+    .image-container {
+        width: 100%; /* Ensure the container itself is full width */
+    }
+
+    .center-image,
+    .light-effect,
+    .shadow-effect,
+    .cass-effect {
+        width: 100%; /* Make images full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
     .btn-gold {
         width: 30%; /* Larger button width on smaller screens */
         min-width: 120px; /* Smaller minimum size */
@@ -182,3 +194,4 @@ body {
         font-size: 3vw; /* Larger font size for mobile screens */
     }
 }
+
