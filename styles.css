@@ -172,7 +172,7 @@ body {
 }
 
 /* Adjustments for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 896px) {
     .image-container {
         width: 100%; /* Ensure the container itself is full width */
     }
